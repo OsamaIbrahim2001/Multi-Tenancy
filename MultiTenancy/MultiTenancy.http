@@ -1,0 +1,25 @@
+@MultiTenancy_HostAddress = https://localhost:7033
+@host = https://localhost:7033
+
+
+GET {{host}}/api/product
+tenant:twitter
+
+###
+
+POST {{host}}/api/product
+Content-Type: application/json
+tenant:twitter
+
+{
+ "name":"Product 1",
+ "Descriptions" : "Description twitter Product1",
+ "rate":5
+}
+
+###
+
+GET {{host}}/api/product/3
+tenant:twitter
+
+###
